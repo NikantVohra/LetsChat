@@ -21,12 +21,12 @@ class LetsChatTests: XCTestCase {
         super.tearDown()
     }
 //    
-//    func testMentions() {
-////        let message = "@chris you around?"
-////        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-////        let expected = ["mentions" : "chris"] as NSDictionary
-////        XCTAssertEqual(expected ,  result )
-//    }
+    func testMentions() {
+        let message = "@chris you around?"
+        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
+        let expected = ["mentions" : "chris"] as NSDictionary
+        XCTAssertEqual(expected ,  result )
+    }
     
     
     
