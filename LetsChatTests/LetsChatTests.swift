@@ -22,6 +22,7 @@ class LetsChatTests: XCTestCase {
     }
     
     func testMentions() {
+        
     }
     
     func testPerformanceExample() {

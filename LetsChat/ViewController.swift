@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(MessageConverter.sharedInstance.convertMessage("@nikant @nik (asdhasdhajshdhjas)(asdhasghd)"))
+        print(MessageConverter.sharedInstance.convertMessage("@nikant @nik (asdhasdhajshdhjas)(asdhasghd) www.nikantvohra.com http://www.quora.com")!)
         
     }
 
