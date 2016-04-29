@@ -14,6 +14,7 @@
 		05F075341CD2F8160061096C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F075321CD2F8160061096C /* LaunchScreen.storyboard */; };
 		05F0753F1CD2F8160061096C /* LetsChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0753E1CD2F8160061096C /* LetsChatTests.swift */; };
 		05F0754A1CD2F8160061096C /* LetsChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F075491CD2F8160061096C /* LetsChatUITests.swift */; };
+		05F075581CD2FC4A0061096C /* MessageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F075571CD2FC4A0061096C /* MessageConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		05F075451CD2F8160061096C /* LetsChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F075491CD2F8160061096C /* LetsChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsChatUITests.swift; sourceTree = "<group>"; };
 		05F0754B1CD2F8160061096C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05F075571CD2FC4A0061096C /* MessageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				05F075291CD2F8160061096C /* AppDelegate.swift */,
 				05F0752B1CD2F8160061096C /* ViewController.swift */,
+				05F075571CD2FC4A0061096C /* MessageConverter.swift */,
 				05F0752D1CD2F8160061096C /* Main.storyboard */,
 				05F075301CD2F8160061096C /* Assets.xcassets */,
 				05F075321CD2F8160061096C /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F0752C1CD2F8160061096C /* ViewController.swift in Sources */,
+				05F075581CD2FC4A0061096C /* MessageConverter.swift in Sources */,
 				05F0752A1CD2F8160061096C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
