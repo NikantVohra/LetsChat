@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05F0752A1CD2F8160061096C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F075291CD2F8160061096C /* AppDelegate.swift */; };
+		05F0752C1CD2F8160061096C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0752B1CD2F8160061096C /* ViewController.swift */; };
+		05F0752F1CD2F8160061096C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F0752D1CD2F8160061096C /* Main.storyboard */; };
+		05F075311CD2F8160061096C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F075301CD2F8160061096C /* Assets.xcassets */; };
+		05F075341CD2F8160061096C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F075321CD2F8160061096C /* LaunchScreen.storyboard */; };
+		05F0753F1CD2F8160061096C /* LetsChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0753E1CD2F8160061096C /* LetsChatTests.swift */; };
+		05F0754A1CD2F8160061096C /* LetsChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F075491CD2F8160061096C /* LetsChatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05F0753B1CD2F8160061096C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05F0751E1CD2F8160061096C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05F075251CD2F8160061096C;
+			remoteInfo = LetsChat;
+		};
+		05F075461CD2F8160061096C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05F0751E1CD2F8160061096C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05F075251CD2F8160061096C;
+			remoteInfo = LetsChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05F075261CD2F8160061096C /* LetsChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F075291CD2F8160061096C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05F0752B1CD2F8160061096C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05F0752E1CD2F8160061096C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05F075301CD2F8160061096C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05F075331CD2F8160061096C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05F075351CD2F8160061096C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05F0753A1CD2F8160061096C /* LetsChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F0753E1CD2F8160061096C /* LetsChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsChatTests.swift; sourceTree = "<group>"; };
+		05F075401CD2F8160061096C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05F075451CD2F8160061096C /* LetsChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F075491CD2F8160061096C /* LetsChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsChatUITests.swift; sourceTree = "<group>"; };
+		05F0754B1CD2F8160061096C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05F075231CD2F8160061096C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075371CD2F8160061096C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075421CD2F8160061096C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05F0751D1CD2F8160061096C = {
+			isa = PBXGroup;
+			children = (
+				05F075281CD2F8160061096C /* LetsChat */,
+				05F0753D1CD2F8160061096C /* LetsChatTests */,
+				05F075481CD2F8160061096C /* LetsChatUITests */,
+				05F075271CD2F8160061096C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05F075271CD2F8160061096C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05F075261CD2F8160061096C /* LetsChat.app */,
+				05F0753A1CD2F8160061096C /* LetsChatTests.xctest */,
+				05F075451CD2F8160061096C /* LetsChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05F075281CD2F8160061096C /* LetsChat */ = {
+			isa = PBXGroup;
+			children = (
+				05F075291CD2F8160061096C /* AppDelegate.swift */,
+				05F0752B1CD2F8160061096C /* ViewController.swift */,
+				05F0752D1CD2F8160061096C /* Main.storyboard */,
+				05F075301CD2F8160061096C /* Assets.xcassets */,
+				05F075321CD2F8160061096C /* LaunchScreen.storyboard */,
+				05F075351CD2F8160061096C /* Info.plist */,
+			);
+			path = LetsChat;
+			sourceTree = "<group>";
+		};
+		05F0753D1CD2F8160061096C /* LetsChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				05F0753E1CD2F8160061096C /* LetsChatTests.swift */,
+				05F075401CD2F8160061096C /* Info.plist */,
+			);
+			path = LetsChatTests;
+			sourceTree = "<group>";
+		};
+		05F075481CD2F8160061096C /* LetsChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				05F075491CD2F8160061096C /* LetsChatUITests.swift */,
+				05F0754B1CD2F8160061096C /* Info.plist */,
+			);
+			path = LetsChatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05F075251CD2F8160061096C /* LetsChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05F0754E1CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChat" */;
+			buildPhases = (
+				05F075221CD2F8160061096C /* Sources */,
+				05F075231CD2F8160061096C /* Frameworks */,
+				05F075241CD2F8160061096C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LetsChat;
+			productName = LetsChat;
+			productReference = 05F075261CD2F8160061096C /* LetsChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05F075391CD2F8160061096C /* LetsChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05F075511CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChatTests" */;
+			buildPhases = (
+				05F075361CD2F8160061096C /* Sources */,
+				05F075371CD2F8160061096C /* Frameworks */,
+				05F075381CD2F8160061096C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05F0753C1CD2F8160061096C /* PBXTargetDependency */,
+			);
+			name = LetsChatTests;
+			productName = LetsChatTests;
+			productReference = 05F0753A1CD2F8160061096C /* LetsChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05F075441CD2F8160061096C /* LetsChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05F075541CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChatUITests" */;
+			buildPhases = (
+				05F075411CD2F8160061096C /* Sources */,
+				05F075421CD2F8160061096C /* Frameworks */,
+				05F075431CD2F8160061096C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05F075471CD2F8160061096C /* PBXTargetDependency */,
+			);
+			name = LetsChatUITests;
+			productName = LetsChatUITests;
+			productReference = 05F075451CD2F8160061096C /* LetsChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05F0751E1CD2F8160061096C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Vohra, Nikant";
+				TargetAttributes = {
+					05F075251CD2F8160061096C = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					05F075391CD2F8160061096C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 05F075251CD2F8160061096C;
+					};
+					05F075441CD2F8160061096C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 05F075251CD2F8160061096C;
+					};
+				};
+			};
+			buildConfigurationList = 05F075211CD2F8160061096C /* Build configuration list for PBXProject "LetsChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05F0751D1CD2F8160061096C;
+			productRefGroup = 05F075271CD2F8160061096C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05F075251CD2F8160061096C /* LetsChat */,
+				05F075391CD2F8160061096C /* LetsChatTests */,
+				05F075441CD2F8160061096C /* LetsChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05F075241CD2F8160061096C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F075341CD2F8160061096C /* LaunchScreen.storyboard in Resources */,
+				05F075311CD2F8160061096C /* Assets.xcassets in Resources */,
+				05F0752F1CD2F8160061096C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075381CD2F8160061096C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075431CD2F8160061096C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05F075221CD2F8160061096C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F0752C1CD2F8160061096C /* ViewController.swift in Sources */,
+				05F0752A1CD2F8160061096C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075361CD2F8160061096C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F0753F1CD2F8160061096C /* LetsChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05F075411CD2F8160061096C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F0754A1CD2F8160061096C /* LetsChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05F0753C1CD2F8160061096C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05F075251CD2F8160061096C /* LetsChat */;
+			targetProxy = 05F0753B1CD2F8160061096C /* PBXContainerItemProxy */;
+		};
+		05F075471CD2F8160061096C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05F075251CD2F8160061096C /* LetsChat */;
+			targetProxy = 05F075461CD2F8160061096C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05F0752D1CD2F8160061096C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F0752E1CD2F8160061096C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05F075321CD2F8160061096C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F075331CD2F8160061096C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05F0754C1CD2F8160061096C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05F0754D1CD2F8160061096C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05F0754F1CD2F8160061096C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LetsChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05F075501CD2F8160061096C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LetsChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05F075521CD2F8160061096C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LetsChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LetsChat.app/LetsChat";
+			};
+			name = Debug;
+		};
+		05F075531CD2F8160061096C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LetsChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LetsChat.app/LetsChat";
+			};
+			name = Release;
+		};
+		05F075551CD2F8160061096C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LetsChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LetsChat;
+			};
+			name = Debug;
+		};
+		05F075561CD2F8160061096C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LetsChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikant.LetsChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LetsChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05F075211CD2F8160061096C /* Build configuration list for PBXProject "LetsChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F0754C1CD2F8160061096C /* Debug */,
+				05F0754D1CD2F8160061096C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05F0754E1CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F0754F1CD2F8160061096C /* Debug */,
+				05F075501CD2F8160061096C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05F075511CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F075521CD2F8160061096C /* Debug */,
+				05F075531CD2F8160061096C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05F075541CD2F8160061096C /* Build configuration list for PBXNativeTarget "LetsChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F075551CD2F8160061096C /* Debug */,
+				05F075561CD2F8160061096C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05F0751E1CD2F8160061096C /* Project object */;
+}
