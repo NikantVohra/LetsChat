@@ -25,10 +25,8 @@ class LetsChatTests: XCTestCase {
         let message = "@chris you around?"
         let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
         let expected = ["mentions" : "chris"] as NSDictionary
-        XCTAssertEqual(expected ,  result )
+        XCTAssertEqual(expected ,  result)
     }
-    
-    
     
     
     func jsonToDict(json : String) -> NSDictionary {
