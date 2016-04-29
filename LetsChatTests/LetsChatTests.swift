@@ -20,13 +20,13 @@ class LetsChatTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testMentions() {
-        let message = "@chris you around?"
-        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-        let expected = ["mentions" : "chris"] as NSDictionary
-        XCTAssertEqual(expected ,  result )
-    }
+//    
+//    func testMentions() {
+////        let message = "@chris you around?"
+////        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
+////        let expected = ["mentions" : "chris"] as NSDictionary
+////        XCTAssertEqual(expected ,  result )
+//    }
     
     
     
