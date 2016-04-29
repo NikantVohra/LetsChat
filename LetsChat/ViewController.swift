@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var inputTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(MessageConverter.sharedInstance.convertMessage("@nikant @nik (asdhasdhajshdhjas)(asdhasghd) www.nikantvohra.com http://www.quora.com")!)
         
     }
 
@@ -22,6 +23,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        self.outputLabel.text = MessageConverter.sharedInstance.convertMessage(self.inputTextView.text)
+    }
 
 }
 

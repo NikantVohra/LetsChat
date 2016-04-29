@@ -22,14 +22,26 @@ class LetsChatTests: XCTestCase {
     }
     
     func testMentions() {
-        
+        let message = "@chris you around?"
+        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
+        let expected = ["mentions" : "chris"] as NSDictionary
+        XCTAssertEqual(expected ,  result )
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    
+    
+    
+    func jsonToDict(json : String) -> NSDictionary {
+        if let data = json.dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+            } catch let error as NSError {
+                print(error)
+            }
         }
+        return NSDictionary()
     }
+    
+
     
 }

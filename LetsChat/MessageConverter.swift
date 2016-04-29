@@ -89,7 +89,6 @@ class MessageConverter {
         }
         return links
 
-        
     }
     
     private func fetchLinkTitle(url : String) -> String? {
