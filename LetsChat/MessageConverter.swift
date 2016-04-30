@@ -7,11 +7,24 @@
 //
 
 import Foundation
+
+//The MessageConverter is a Singleton class that handles the conversion of a chat message to a JSON string containing information about its contents.
+
 class MessageConverter {
     
     static let sharedInstance = MessageConverter()
-    static let maxEmoticonLength = 15
+    let maxEmoticonLength = 15
     
+    /*
+     
+    Converts a given chat message to a JSON string containing information about various properties : mentions, emoticons and links.
+    
+    Args : 
+     message(String) : The input chat message
+    Output :
+     Optional String : JSON string containing information about message properties. Returns nil on encountering an error.
+    
+    */
     internal func convertMessage(message : String) -> String? {
         var jsonMessageDict = Dictionary<String, AnyObject>()
         
@@ -30,7 +43,6 @@ class MessageConverter {
             jsonMessageDict["links"] = links
         }
 
-        
         do {
             let decodedJson = try NSJSONSerialization.dataWithJSONObject(jsonMessageDict, options: [])
             if let result = NSString(data: decodedJson, encoding: NSUTF8StringEncoding) {
@@ -43,6 +55,16 @@ class MessageConverter {
     }
     
     
+    /*
+     
+     Detects the presence of mentions in the message and returns all the mentions in an Array
+     
+     Args :
+     message(String) : The input chat message
+     Output :
+     Array of Strings : Array containting the mentions as String
+     
+     */
     
     private func detectMentions(message : String) -> [String]{
         var mentions = [String]()
@@ -55,16 +77,43 @@ class MessageConverter {
         return mentions
     }
     
+    
+    /*
+     
+     Detects the presence of emoticons in the message and returns all the emoticons in an Array
+     
+     Args :
+     message(String) : The input chat message
+     Output :
+     Array of Strings : Array containing the emoticons as String
+    
+    */
+    
     private func detectEmoticons(message : String) -> [String]{
         var emoticons = [String]()
         let matches = detectRegexMatches(message, pattern:  "\\((\\w+?)\\)")
         for match in matches {
             let emoticonRange = match.range
-            emoticons.append(message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!))
+            //Emoticons above 15 alphanumeric characters in length are not considered
+            if(emoticonRange.length - 2 <= maxEmoticonLength) {
+                emoticons.append(message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!))
+            }
+            
             
         }
         return emoticons
     }
+    
+    /*
+     
+     Detects the presence of links in the message and returns an Array containing the Dictionaries of the url and the title attributes of the links
+     
+     Args :
+     message(String) : The input chat message
+     Output :
+     Array of Dictionaries [[String : String]] : Array containing the Dictionaries of the url and the title attributes of the links
+     
+    */
     
     private func detectLinks(message : String) -> [[String : String]] {
         var links = [[String : String]]()
@@ -91,6 +140,18 @@ class MessageConverter {
 
     }
     
+    /*
+     
+     Fetches the title of the webpage from the url
+     
+     Args :
+     url(String) : The url of the webpage
+     Output :
+     Optional String : Title of the webpage
+     Considerations : The fetching of title right now happens on the main thread and will block th UI. We can transfer this to a background thread and have a delegate inform the controller to refresh the contents once the titles are fetched.
+     
+    */
+
     private func fetchLinkTitle(url : String) -> String? {
         let url = NSURL(string: url)
         do {
@@ -111,7 +172,15 @@ class MessageConverter {
     }
     
     
-    
+    /* 
+     
+     Find all the matches of a pattern(regular expression) in a string.
+     Args :
+     message(String) : The input message , pattern(String) : The regex to be detected in the messafe
+     Output :
+     Array  [NSTextCheckingResult] : Returns an array containing the matched ranges of the regex in the form of NSTextCheckingResult
+     
+    */
     private func detectRegexMatches(message : String, pattern : String) -> [NSTextCheckingResult] {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = regex.matchesInString(message, options: [], range: NSMakeRange(0, message.characters.count))
@@ -123,7 +192,7 @@ class MessageConverter {
     
     
 }
-
+ // A custom String extension containing a method to convert NSRange to Range<String.Index> for using the substring method on the String object.
 
 extension String {
     func rangeFromNSRange(nsRange : NSRange) -> Range<String.Index>? {
