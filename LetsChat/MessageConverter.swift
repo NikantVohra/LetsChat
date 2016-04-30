@@ -10,7 +10,7 @@ import Foundation
 class MessageConverter {
     
     static let sharedInstance = MessageConverter()
-    static let maxEmoticonLength = 15
+    let maxEmoticonLength = 15
     
     internal func convertMessage(message : String) -> String? {
         var jsonMessageDict = Dictionary<String, AnyObject>()
@@ -30,7 +30,6 @@ class MessageConverter {
             jsonMessageDict["links"] = links
         }
 
-        
         do {
             let decodedJson = try NSJSONSerialization.dataWithJSONObject(jsonMessageDict, options: [])
             if let result = NSString(data: decodedJson, encoding: NSUTF8StringEncoding) {
@@ -60,7 +59,10 @@ class MessageConverter {
         let matches = detectRegexMatches(message, pattern:  "\\((\\w+?)\\)")
         for match in matches {
             let emoticonRange = match.range
-            emoticons.append(message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!))
+            if(emoticonRange.length - 2 <= maxEmoticonLength) {
+                emoticons.append(message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!))
+            }
+            
             
         }
         return emoticons
