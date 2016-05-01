@@ -23,3 +23,5 @@ Any URLs contained in the message, along with the page's title
 1. Open the LetsChat.xcodeproj in Xcode.
 2. Run the app by pressing cmd+R or test the various scenarios by pressing cmd+U.
 3. Input your message.Press submit and see the output containing the required json string.
+
+Checkout the async branch for another approach for solving this problem.
