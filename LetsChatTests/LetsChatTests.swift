@@ -20,35 +20,65 @@ class LetsChatTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+//    
     func testMentions() {
+        let asyncExpectation = expectationWithDescription("testMentionsExpectation")
         let message = "@chris you around?"
-        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-        let expected = ["mentions" : ["chris"]] as Dictionary<String, NSObject>
-        XCTAssertEqual(result, expected)
+        var resultDict = Dictionary<String, NSObject>()
+        MessageConverter.sharedInstance.convertMessage(message) { (result) in
+            resultDict = self.jsonToDict(result!)
+            asyncExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5) { (error) in
+            let expected = ["mentions" : ["chris"]] as Dictionary<String, NSObject>
+            XCTAssertEqual(resultDict, expected)
+        }
+        
     }
-    
+
     func testEmoticons() {
+        let asyncExpectation = expectationWithDescription("testEmoticonsExpectation")
         let message = "Good morning! (megusta) (coffee)"
-        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-        let expected = ["emoticons" : ["megusta", "coffee"]] as Dictionary<String, NSObject>
-        XCTAssertEqual(result, expected)
+        var resultDict = Dictionary<String, NSObject>()
+        MessageConverter.sharedInstance.convertMessage(message) { (result) in
+            resultDict = self.jsonToDict(result!)
+            asyncExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5) { (error) in
+            let expected = ["emoticons" : ["megusta", "coffee"]] as Dictionary<String, NSObject>
+            XCTAssertEqual(resultDict, expected)
+        }
         
     }
-    
+
     func testLinks() {
+        let asyncExpectation = expectationWithDescription("testLinksExpectation")
         let message = "Olympics are starting soon;http://www.nbcolympics.com"
-        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-        let expected = ["links" : [[ "url": "http://www.nbcolympics.com", "title": "2016 Rio Olympic Games | NBC Olympics"]]] as Dictionary<String, NSObject>
-        XCTAssertEqual(result, expected)
+        var resultDict = Dictionary<String, NSObject>()
+        MessageConverter.sharedInstance.convertMessage(message) { (result) in
+            resultDict = self.jsonToDict(result!)
+            asyncExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5) { (error) in
+            let expected = ["links" : [[ "url": "http://www.nbcolympics.com", "title": "2016 Rio Olympic Games | NBC Olympics"]]] as Dictionary<String, NSObject>
+            XCTAssertEqual(resultDict, expected)
+        }
+
         
     }
-    
+
     func testMisc() {
+        let asyncExpectation = expectationWithDescription("testMiscExpectation")
         let message = "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
-        let result = jsonToDict(MessageConverter.sharedInstance.convertMessage(message)!)
-        let expected = ["mentions" :["bob", "john"], "emoticons":["success"], "links" : [[ "url": "https://twitter.com/jdorfman/status/430511497475670016", "title": "Justin Dorfman on Twitter: &quot;nice @littlebigdetail from @HipChat (shows hex colors when pasted in chat). http://t.co/7cI6Gjy5pq&quot;"]]] as Dictionary<String, NSObject>
-        XCTAssertEqual(result, expected)
+        var resultDict = Dictionary<String, NSObject>()
+        MessageConverter.sharedInstance.convertMessage(message) { (result) in
+            resultDict = self.jsonToDict(result!)
+            asyncExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5) { (error) in
+            let expected = ["mentions" :["bob", "john"], "emoticons":["success"], "links" : [[ "url": "https://twitter.com/jdorfman/status/430511497475670016", "title": "Justin Dorfman on Twitter: &quot;nice @littlebigdetail from @HipChat (shows hex colors when pasted in chat). http://t.co/7cI6Gjy5pq&quot;"]]] as Dictionary<String, NSObject>
+            XCTAssertEqual(resultDict, expected)
+        }
     }
     
     func jsonToDict(json : String) -> Dictionary<String, NSObject> {
