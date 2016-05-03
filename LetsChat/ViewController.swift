@@ -24,7 +24,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func submitButtonPressed(sender: AnyObject) {
-        self.outputLabel.text = MessageConverter.sharedInstance.convertMessage(self.inputTextView.text)
+        MessageConverter.sharedInstance.convertMessage(self.inputTextView.text, completion: { (result) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.outputLabel.text = result
+
+            })
+        })
     }
 
 }

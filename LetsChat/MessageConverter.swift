@@ -22,10 +22,10 @@ class MessageConverter {
     Args : 
      message(String) : The input chat message
     Output :
-     Optional String : JSON string containing information about message properties. Returns nil on encountering an error.
+     Optional String on completion : JSON string containing information about message properties. Returns nil on encountering an error.
     
     */
-    internal func convertMessage(message : String) -> String? {
+    internal func convertMessage(message : String, completion: (result : String?) -> Void) {
         var jsonMessageDict = Dictionary<String, AnyObject>()
         
         let mentions = detectMentions(message)
@@ -38,20 +38,23 @@ class MessageConverter {
             jsonMessageDict["emoticons"] = emoticons
         }
         
-        let links = detectLinks(message)
-        if links.count > 0 {
-            jsonMessageDict["links"] = links
-        }
-
-        do {
-            let decodedJson = try NSJSONSerialization.dataWithJSONObject(jsonMessageDict, options: [])
-            if let result = NSString(data: decodedJson, encoding: NSUTF8StringEncoding) {
-                return result as String
+        detectLinks(message) { (result) in
+            if result.count > 0 {
+                jsonMessageDict["links"] = result
             }
-        } catch let error as NSError {
-            print(error)
+            do {
+                let decodedJson = try NSJSONSerialization.dataWithJSONObject(jsonMessageDict, options: [])
+                if let convertedMessage = NSString(data: decodedJson, encoding: NSUTF8StringEncoding) {
+                    completion(result: convertedMessage as String)
+                }
+            } catch let error as NSError {
+                print(error)
+                completion(result: nil)
+
+            }
+
         }
-        return nil
+        
     }
     
     
@@ -115,7 +118,7 @@ class MessageConverter {
      
     */
     
-    private func detectLinks(message : String) -> [[String : String]] {
+    private func detectLinks(message : String, completion: (result: [[String : String]] ) -> Void)  {
         var links = [[String : String]]()
         let types: NSTextCheckingType = .Link
         
@@ -123,20 +126,32 @@ class MessageConverter {
         
         if let detect = detector  {
             let matches = detect.matchesInString(message, options: .ReportCompletion, range: NSMakeRange(0, message.characters.count))
-            
-            for match in matches {
-                let urlRange = match.range
-                let url = message.substringWithRange(message.rangeFromNSRange(NSMakeRange(urlRange.location, urlRange.length))!)
-                if let linkTitle = fetchLinkTitle(url) {
-                    links.append(["url" : url, "title" : linkTitle])
+            var titlesFetched = 0
+            if(matches.count  > 0) {
+                for match in matches {
+                    let urlRange = match.range
+                    let url = message.substringWithRange(message.rangeFromNSRange(NSMakeRange(urlRange.location, urlRange.length))!)
+                    fetchLinkTitle(url, completion: { (result) in
+                        if let linkTitle = result {
+                             links.append(["url" : url, "title" : linkTitle])
+                        }
+                        else {
+                            links.append(["url" : url, "title" : ""])
+
+                        }
+                        titlesFetched = titlesFetched + 1
+                        if(titlesFetched == matches.count) {
+                            completion(result: links)
+                        }
+                        
+                    })
                 }
-                else {
-                    links.append(["url" : url, "title" : ""])
-                }
+            }
+            else {
+                completion(result: [])
             }
 
         }
-        return links
 
     }
     
@@ -152,23 +167,26 @@ class MessageConverter {
      
     */
 
-    private func fetchLinkTitle(url : String) -> String? {
-        let url = NSURL(string: url)
-        do {
-            let htmlSourceString = try String(contentsOfURL: url!, encoding:  NSASCIIStringEncoding)
-            let titleMatch = detectRegexMatches(htmlSourceString, pattern: "<title>(.*?)</title>")
-            if titleMatch.count > 0 {
-                let titleRange = titleMatch[0].range
-                let title =  htmlSourceString.substringWithRange(htmlSourceString.rangeFromNSRange(NSMakeRange(titleRange.location + "<title>".characters.count, titleRange.length - "</title>".characters.count - "<title>".characters.count ))!)
-                return title
+    private func fetchLinkTitle(url : String, completion: (result: String?) -> Void)  {
+
+        let urlWebpage = NSURL(string: url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(urlWebpage!) {(data, response, error) in
+            if(error == nil) {
+                let htmlSourceString = NSString(data: data!, encoding: NSASCIIStringEncoding) as! String
+                let titleMatch = self.detectRegexMatches(htmlSourceString, pattern: "<title>(.*?)</title>")
+                if titleMatch.count > 0 {
+                    let titleRange = titleMatch[0].range
+                    let title =  htmlSourceString.substringWithRange(htmlSourceString.rangeFromNSRange(NSMakeRange(titleRange.location + "<title>".characters.count, titleRange.length - "</title>".characters.count - "<title>".characters.count ))!)
+                    completion(result: title)
+                }
+                else {
+                    completion(result: nil)
+
+                }
+            
             }
-            else {
-                return nil
-            }
-        } catch let error as NSError {
-            print("Error: \(error)")
         }
-        return nil
+        task.resume()
     }
     
     
