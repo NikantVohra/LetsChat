@@ -98,11 +98,10 @@ class MessageConverter {
         for match in matches {
             let emoticonRange = match.range
             //Emoticons above 15 alphanumeric characters in length are not considered
-            if(emoticonRange.length - 2 <= maxEmoticonLength) {
-                emoticons.append(message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!))
+            let emoticon = message.substringWithRange(message.rangeFromNSRange(NSMakeRange(emoticonRange.location + 1, emoticonRange.length - 2))!)
+            if(emoticon.characters.count <= maxEmoticonLength && emoticon.isAlphanumeric) {
+                emoticons.append(emoticon)
             }
-            
-            
         }
         return emoticons
     }
@@ -209,6 +208,7 @@ class MessageConverter {
     
     
     
+    
 }
  // A custom String extension containing a method to convert NSRange to Range<String.Index> for using the substring method on the String object.
 
@@ -221,5 +221,9 @@ extension String {
             return from ..< to
         }
         return nil
+    }
+    
+    var isAlphanumeric: Bool {
+        return rangeOfString("^[a-zA-Z0-9]+$", options: .RegularExpressionSearch) != nil
     }
 }
