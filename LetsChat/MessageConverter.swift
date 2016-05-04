@@ -162,7 +162,6 @@ class MessageConverter {
      url(String) : The url of the webpage
      Output :
      Optional String : Title of the webpage
-     Considerations : The fetching of title right now happens on the main thread and will block th UI. We can transfer this to a background thread and have a delegate inform the controller to refresh the contents once the titles are fetched.
      
     */
 
